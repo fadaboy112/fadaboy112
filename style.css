@@ -1,0 +1,157 @@
+:root {
+  --bg: #fff;
+  --text: #111;
+  --accent: #000;
+  --nav-bg: #111;
+  --nav-text: #fff;
+  --fade-time: 1s;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background 0.4s, color 0.4s;
+}
+
+header {
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a {
+  color: var(--nav-text);
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+#darkModeToggle {
+  background: none;
+  border: none;
+  color: var(--nav-text);
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-left: 1em;
+  transition: color 0.3s;
+}
+#darkModeToggle:hover {
+  color: var(--accent);
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+  background: var(--bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 1.5rem;
+  transition: background 0.4s, color 0.4s;
+}
+
+h2 {
+  color: var(--accent);
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 1.2em;
+}
+
+.project {
+  margin-bottom: 1.5em;
+}
+
+form label {
+  display: block;
+  margin: 0.5em 0 0.2em;
+}
+form input, form textarea {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s, color 0.4s;
+}
+form button {
+  padding: 0.7em 1.5em;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+form button:hover {
+  background: #444;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background: var(--nav-bg);
+  color: var(--nav-text);
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp var(--fade-time) forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  --bg: #111;
+  --text: #eee;
+  --accent: #fff;
+  --nav-bg: #222;
+  --nav-text: #fff;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--accent, #000);
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+  transition: transform 0.4s;
+}
